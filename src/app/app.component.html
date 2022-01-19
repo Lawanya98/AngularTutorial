@@ -3,11 +3,7 @@
   <h1>
     From AppComponent
   </h1>
-  <app-test></app-test>
-
-  <app-directivetest></app-directivetest>
-
-  <app-directive2></app-directive2>
+  
 
   <hr>
 
@@ -23,6 +19,23 @@
 
   <button (click)="onClick()" >Click me</button>
 </div>
- 
+
+<br/>
+
+<div>
+  <hr>
+  <h2 style="text-align:center">Routing</h2>
+  <nav>
+    <button><a routerLink="/test" routerLinkActive="active">App Test</a></button>
+    <button><a routerLink="/directivetest" routerLinkActive="active">Directive Test</a></button>
+    <button><a routerLink="/directive2" routerLinkActive="active">Directive 2</a></button>
+    <button><a routerLink="/departments" routerLinkActive="active">Departments</a></button>
+    <!--routerLinkActive-- this directive let you specify one or more css classes to be applied on anchor tag -->
+    <button><a routerLink="/employees" routerLinkActive="active">Employees</a></button>
+  </nav>
+</div>
+
+
 
 <router-outlet></router-outlet>
+<!-- routed view goes here -->
