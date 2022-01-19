@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    From AppComponent
+  </h1>
+  <app-test></app-test>
+
+  <app-directivetest></app-directivetest>
+
+  <app-directive2></app-directive2>
+
+  <hr>
+
+  <button (click)="userLoggedIn=true">Log In</button>
+  <button (click)="userLoggedIn=false">Logout</button>
+  {{userLoggedIn}}
+  <br/>
+  <app-communication (childEvent)="message=$event" [parentData]="name" [loggedIn]="userLoggedIn"></app-communication>
+  <!-- <app-communication (childEvent)="receivedMessage($event)"></app-communication> -->
+  <h1>Child to parent communication - {{message}}</h1>
+
+  <app-viewchild></app-viewchild>
+
+  <button (click)="onClick()" >Click me</button>
+</div>
+ 
+
+<router-outlet></router-outlet>
