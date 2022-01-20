@@ -9,40 +9,42 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
 import { DepartmentContactComponent } from './department-contact/department-contact.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
   //default routing at the very begining
   // {path: '', component: DepartmentListComponent},
   //redirect path
-  {path: '', redirectTo: '/departments-change', pathMatch: 'full'},  
+  { path: '', redirectTo: '/departments-change', pathMatch: 'full' },
   //pathMatch property tells how to match the url segments with configured routes
   //1. prefix --> if path is a prefix url, redirect to department but it doesn't work for empty path
   //2. full -->  says we redirect only if the ful url is empty
 
-  {path: 'departments-change', component: DepartmentListComponent},
+  { path: 'departments-change', component: DepartmentListComponent },
 
   //route parameter --> :id placeholder
   //{path: 'departments-change/:id', component: DepartmentDetailComponent},
-  
+
   //reformat for CHILD ROUTING
   {
-    path: 'departments-change/:id', 
+    path: 'departments-change/:id',
     component: DepartmentDetailComponent,
     children: [
-      {path: 'overview', component: DepartmentOverviewComponent},
-      {path: 'contact', component: DepartmentContactComponent}
+      { path: 'overview', component: DepartmentOverviewComponent },
+      { path: 'contact', component: DepartmentContactComponent }
     ]
   },
 
 
-  {path: 'employees', component: EmployeeListComponent},
-  {path: 'test', component: TestComponent},
-  {path: 'directivetest', component: DirectivetestComponent},
-  {path: 'directive2', component: Directive2Component},
+  { path: 'employees', component: EmployeeListComponent },
+  { path: 'test', component: TestComponent },
+  { path: 'directivetest', component: DirectivetestComponent },
+  { path: 'directive2', component: Directive2Component },
+  { path: 'form', component: FormComponent },
   //wild card route should be the last one at the route configuration
   //because routing is matched from the very top
-  {path: '**', component: PageNotFoundComponent}
-  
+  { path: '**', component: PageNotFoundComponent }
+
 
 ];
 
@@ -52,7 +54,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
-  DepartmentListComponent, 
+  DepartmentListComponent,
   EmployeeListComponent,
   TestComponent,
   DirectivetestComponent,
@@ -60,5 +62,6 @@ export const routingComponents = [
   PageNotFoundComponent,
   DepartmentDetailComponent,
   DepartmentOverviewComponent,
-  DepartmentContactComponent
+  DepartmentContactComponent,
+  FormComponent
 ]

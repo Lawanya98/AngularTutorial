@@ -3,24 +3,24 @@
   <h1>
     From AppComponent
   </h1>
-  
+
 
   <hr>
 
   <button (click)="userLoggedIn=true">Log In</button>
   <button (click)="userLoggedIn=false">Logout</button>
   {{userLoggedIn}}
-  <br/>
+  <br />
   <app-communication (childEvent)="message=$event" [parentData]="name" [loggedIn]="userLoggedIn"></app-communication>
   <!-- <app-communication (childEvent)="receivedMessage($event)"></app-communication> -->
   <h1>Child to parent communication - {{message}}</h1>
 
   <app-viewchild></app-viewchild>
 
-  <button (click)="onClick()" >Click me</button>
+  <button (click)="onClick()">Click me</button>
 </div>
 
-<br/>
+<br />
 
 <div>
   <hr>
@@ -32,7 +32,13 @@
     <button><a routerLink="/departments-change" routerLinkActive="active">Departments</a></button>
     <!--routerLinkActive-- this directive let you specify one or more css classes to be applied on anchor tag -->
     <button><a routerLink="/employees" routerLinkActive="active">Employees</a></button>
+    <button><a routerLink="/form" routerLinkActive="active">Forms</a></button>
   </nav>
+</div>
+
+
+<div>
+
 </div>
 
 

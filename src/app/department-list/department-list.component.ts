@@ -19,39 +19,39 @@ export class DepartmentListComponent implements OnInit {
   public selectedId;
 
   departments = [
-    {"id": 1, "name": "Angular"},
-    {"id": 2, "name": "Node"},
-    {"id": 3, "name": "MongoDB"},
-    {"id": 4, "name": "Ruby"},
-    {"id": 5, "name": "Bootstrap"}
+    { "id": 1, "name": "Angular" },
+    { "id": 2, "name": "Node" },
+    { "id": 3, "name": "MongoDB" },
+    { "id": 4, "name": "Ruby" },
+    { "id": 5, "name": "Bootstrap" }
   ]
 
-  constructor(private router:Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap)=>{
+    this.route.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(params.get('id'));
-      this.selectedId=id;
+      this.selectedId = id;
     });
   }
 
-  onSelect(department){
-    
+  onSelect(department) {
+
     //use router instance navigate method
-    //argument for this method is link paramters array
+    //argument for this method is link parameters array
     //it is all the information angular need to construct the path, for that we need 2 details
     // 1. path we want to navigate to 
     // 2. route parameter
-    
+
     //this.router.navigate(['/departments', department.id]);
 
     //for relative navigating 
-    this.router.navigate([department.id],{relativeTo: this.route});
+    this.router.navigate([department.id], { relativeTo: this.route });
     //here only contain the parameter
     //don't care what the URL right now BUT throgh the current URL append the ID
   }
 
-  isSelected(department){
+  isSelected(department) {
     return department.id === this.selectedId;
   }
 
