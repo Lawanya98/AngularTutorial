@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
+<div>
+  <!-- <h1>
     From AppComponent
   </h1>
 
@@ -13,35 +13,35 @@
   <br />
   <app-communication (childEvent)="message=$event" [parentData]="name" [loggedIn]="userLoggedIn"></app-communication>
   <!-- <app-communication (childEvent)="receivedMessage($event)"></app-communication> -->
-  <h1>Child to parent communication - {{message}}</h1>
+  <!-- <h1>Child to parent communication - {{message}}</h1>
 
   <app-viewchild></app-viewchild>
 
   <button (click)="onClick()">Click me</button>
-</div>
+</div> --> -->
 
-<br />
+  <br />
 
-<div>
-  <hr>
-  <h2 style="text-align:center">Routing</h2>
-  <nav>
-    <button><a routerLink="/test" routerLinkActive="active">App Test</a></button>
-    <button><a routerLink="/directivetest" routerLinkActive="active">Directive Test</a></button>
-    <button><a routerLink="/directive2" routerLinkActive="active">Directive 2</a></button>
-    <button><a routerLink="/departments-change" routerLinkActive="active">Departments</a></button>
-    <!--routerLinkActive-- this directive let you specify one or more css classes to be applied on anchor tag -->
-    <button><a routerLink="/employees" routerLinkActive="active">Employees</a></button>
-    <button><a routerLink="/form" routerLinkActive="active">Forms</a></button>
-  </nav>
-</div>
-
-
-<div>
-
-</div>
+  <div>
+    <hr>
+    <h2 style="text-align:center">Routing</h2>
+    <nav style="text-align:center">
+      <button><a routerLink="/test" routerLinkActive="active">App Test</a></button>
+      <button><a routerLink="/directivetest" routerLinkActive="active">Directive Test</a></button>
+      <button><a routerLink="/directive2" routerLinkActive="active">Directive 2</a></button>
+      <button><a routerLink="/departments-change" routerLinkActive="active">Departments</a></button>
+      <!--routerLinkActive-- this directive let you specify one or more css classes to be applied on anchor tag -->
+      <button><a routerLink="/employees" routerLinkActive="active">Employees</a></button>
+      <button><a routerLink="/form" routerLinkActive="active">Forms</a></button>
+    </nav>
+  </div>
 
 
+  <div>
 
-<router-outlet></router-outlet>
-<!-- routed view goes here -->
+  </div>
+
+
+
+  <router-outlet></router-outlet>
+  <!-- routed view goes here -->

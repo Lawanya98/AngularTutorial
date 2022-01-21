@@ -10,6 +10,9 @@ import { DepartmentDetailComponent } from './department-detail/department-detail
 import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
 import { DepartmentContactComponent } from './department-contact/department-contact.component';
 import { FormComponent } from './form/form.component';
+import { TdfComponent } from './form/tdf/tdf.component';
+import { ReactiveComponent } from './form/reactive/reactive.component';;
+
 
 const routes: Routes = [
   //default routing at the very begining
@@ -40,7 +43,14 @@ const routes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'directivetest', component: DirectivetestComponent },
   { path: 'directive2', component: Directive2Component },
-  { path: 'form', component: FormComponent },
+  {
+    path: 'form',
+    component: FormComponent,
+    children: [
+      { path: 'tdf', component: TdfComponent },
+      { path: 'reactive', component: ReactiveComponent }
+    ]
+  },
   //wild card route should be the last one at the route configuration
   //because routing is matched from the very top
   { path: '**', component: PageNotFoundComponent }
@@ -63,5 +73,7 @@ export const routingComponents = [
   DepartmentDetailComponent,
   DepartmentOverviewComponent,
   DepartmentContactComponent,
-  FormComponent
+  FormComponent,
+  TdfComponent,
+  ReactiveComponent
 ]

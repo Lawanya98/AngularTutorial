@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { EnrollmentService } from '../enrollment.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -9,32 +8,21 @@ import { EnrollmentService } from '../enrollment.service';
 })
 export class FormComponent implements OnInit {
 
-  topics = ['Angular', 'React', 'Vue'];
-  topicHasError = true;
 
-  userModel = new User('', 'rob@test.com', 3245643, 'default', 'morning', true);
 
-  constructor(private _enrollmenrService: EnrollmentService) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  validateTopic(value) {
-    if (value === 'default') {
-      this.topicHasError = true;
-    } else {
-      this.topicHasError = false;
-    }
+
+
+  showTDF() {
+    this.router.navigate(['tdf'], { relativeTo: this.route });
   }
 
-  onSubmit() {
-    // console.log(this.userModel);
-    this._enrollmenrService.enroll(this.userModel)
-      .subscribe(
-        data => console.log('Success', data),
-        error => console.log('Error', error)
-      )
-
+  showReactive() {
+    this.router.navigate(['reactive'], { relativeTo: this.route });
   }
 
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,13 +12,14 @@ import { CounterComponent } from './viewchild/counter/counter.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CommunicationComponent,
     ViewchildComponent,
     CounterComponent,
-    routingComponents,
+    routingComponents
   ],
   //declaration array contians all the components used by application
 
@@ -25,7 +27,8 @@ import { CounterComponent } from './viewchild/counter/counter.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
